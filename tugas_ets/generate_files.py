@@ -1,4 +1,7 @@
+import os
+
 def generate_file(filename, size_mb):
+    os.makedirs("files", exist_ok=True)
     with open(f"files/{filename}", 'wb') as f:
         f.write(b'0' * size_mb * 1024 * 1024)
     print(f"{filename} ({size_mb}MB) created successfully.")
